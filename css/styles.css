@@ -473,7 +473,7 @@ a {
 
 .footer-container {
   display: flex;
-  gap: 120px;
+  align-items: baseline;
 }
 
 .logo-footer {
@@ -520,6 +520,7 @@ a {
 }
 
 .footer-content {
+  margin-right: 120px;
 }
 
 .footer-soc-link {
