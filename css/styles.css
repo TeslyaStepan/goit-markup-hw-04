@@ -33,6 +33,10 @@ img {
   display: block;
 }
 
+svg {
+  display: block;
+}
+
 a {
   text-decoration: none;
 }
@@ -124,6 +128,23 @@ a {
   text-decoration: none;
   padding-top: 24px;
   padding-bottom: 24px;
+  position: relative;
+}
+
+.current::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  left: 0;
+  bottom: -1px;
+  height: 4px;
+  background-color: #404bbf;
+  border-radius: 2px;
+  display: block;
+}
+
+.header-item:hover {
+  color: #404bbf;
 }
 
 .header-nav:hover,
@@ -177,6 +198,15 @@ a {
   background: #2e2f42;
   padding-bottom: 188px;
   padding-top: 188px;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(/images/people-office\ 1-min.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .order-button {
@@ -245,6 +275,24 @@ a {
   color: #434455;
 }
 
+.about-us-icon-container {
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  width: 264px;
+  height: 112px;
+  background: #f4f4fd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.about-us-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* our team */
 
 .team-main-title {
@@ -286,17 +334,48 @@ a {
   letter-spacing: 0.02em;
   text-align: center;
   color: #434455;
+  margin-bottom: 8px;
 }
 
 .team-card {
-border-radius: 0px 0px 4px 4px;
-width: calc((100% - 72px) / 4);
-background: #ffffff;
-
+  border-radius: 0px 0px 4px 4px;
+  width: calc((100% - 72px) / 4);
+  background: #ffffff;
 }
 
 .team-member-name {
   padding: 32px 0;
+}
+
+.team-memver-soc-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.team-memver-soc-item {
+  display: flex;
+  width: 40px;
+  height: 40px;
+}
+
+.team-member-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+}
+
+.team-soc-icon {
+  fill: #f4f4fd;
+}
+
+.team-member-link:hover {
+  background-color: #31d0aa;
 }
 
 /* portfolio */
@@ -319,7 +398,14 @@ background: #ffffff;
 }
 
 .portfolio-text {
- 
+}
+
+.team-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.team-photo {
 }
 
 .our-projects {
@@ -333,7 +419,29 @@ background: #ffffff;
 .portfolio-card-text {
   padding: 32px 16px;
   border: 1px solid #e7e9fc;
-  border-top: none
+  border-top: none;
+}
+
+.overlay {
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  position: absolute;
+  transition: transform 250ms ease-in-out;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  background-color: #4d5ae5;
+  padding-top: 40px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.portfolio-card:hover .overlay {
+  transform: translateY(0);
 }
 
 /* footer  */
@@ -342,6 +450,11 @@ background: #ffffff;
   background-color: #2e2f42;
   padding-top: 100px;
   padding-bottom: 100px;
+}
+
+.footer-container {
+  display: flex;
+  gap: 120px;
 }
 
 .logo-footer {
@@ -366,4 +479,26 @@ background: #ffffff;
   letter-spacing: 0.02em;
   color: #f4f4fd;
   max-width: 264px;
+}
+
+.footer-soc-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-soc-container {
+  max-width: 208px;
+}
+
+.title-soc-media {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.footer-content {
 }
